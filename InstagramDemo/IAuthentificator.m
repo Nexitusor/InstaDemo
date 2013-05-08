@@ -29,6 +29,7 @@
     {
         UIAlertView *alview = [[UIAlertView alloc]initWithTitle:@"Error" message:@"change your callback url, secret id or client id to yours" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles: nil];
         [alview show];
+        HideNetworkActivityIndicator();
     }
     
     NSURL *url = [[NSURL alloc]initWithString:[NSString stringWithFormat:@"https://api.instagram.com/oauth/authorize/?client_id=%@&display=touch&scope=%@&redirect_uri=%@&response_type=code",clientID,scope,callbackURL]];
